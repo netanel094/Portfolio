@@ -1,0 +1,17 @@
+.navbar {
+  padding: 0 0 1rem;
+}
+
+.brand {
+  margin-right: 100px;
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  font-family: "Montserrat";
+  font-weight: normal;
+  margin-right: 50px;
+}
