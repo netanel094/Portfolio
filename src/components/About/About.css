@@ -1,5 +1,7 @@
-.about-container {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZvnMmYiy4lSlwjzuL9vPfzGIrlrovzKfS8fY9SdecFhDFkf_T");
+#about {
+  background-image: url("/public/images/computer.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  height: 100vh;
 }
