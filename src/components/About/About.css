@@ -1,7 +1,30 @@
 #about {
-  background-image: url("/public/images/computer.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
+  background-color: #eaeaea;
+  text-align: center;
+}
+
+.aboutMeTitle {
+  color: #8bbccc;
+}
+
+@media (min-width: 768px) {
+  .container-about {
+    padding: 100px;
+    font-size: 24px;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fade-in-down 4s ease-in-out;
 }

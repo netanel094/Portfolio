@@ -10,7 +10,7 @@ function CustomNavbar() {
       <Navbar expand="lg" className="navbar bg-body-tertiary">
         <Container className="d-flex justify-content-center">
           <Navbar.Brand className="brand" href="#home">
-            Netanel Yomtovian
+            Portfolio
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
