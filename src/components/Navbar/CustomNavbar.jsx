@@ -5,23 +5,42 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 function CustomNavbar() {
+  const handleNavClick = (event, sectionId) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section id="navbar">
       <Navbar expand="lg" className="navbar bg-body-tertiary">
         <Container className="d-flex justify-content-center">
-          <Navbar.Brand className="brand" href="#home">
+          <Navbar.Brand
+            className="brand"
+            onClick={(event) => handleNavClick(event, "title")}
+          >
             Portfolio
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home" className="nav-link">
+              <Nav.Link
+                className="nav-link"
+                onClick={(event) => handleNavClick(event, "about")}
+              >
                 About
               </Nav.Link>
-              <Nav.Link href="#link" className="nav-link">
+              <Nav.Link
+                className="nav-link"
+                onClick={(event) => handleNavClick(event, "workExperience")}
+              >
                 Work experience
               </Nav.Link>
-              <Nav.Link href="#link" className="nav-link">
+              <Nav.Link
+                className="nav-link"
+                onClick={(event) => handleNavClick(event, "skills")}
+              >
                 Skills
               </Nav.Link>
               <Nav.Link href="#link" className="nav-link">

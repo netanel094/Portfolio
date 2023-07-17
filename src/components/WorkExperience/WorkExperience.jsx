@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
@@ -7,9 +7,6 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import HotelIcon from "@material-ui/icons/Hotel";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import "./WorkExperience.css";
@@ -18,6 +15,11 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: "6px 16px",
     backgroundColor: "#468B97",
+    opacity: 0,
+    animation: "fade-in-down 1s ease-in-out forwards",
+    "&:hover": {
+      backgroundColor: "#58A7C1",
+    },
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
@@ -29,11 +31,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function WorkExperience() {
   const classes = useStyles();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("workExperience");
+      const sectionPosition = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (sectionPosition < windowHeight) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section id="workExperience">
-      <div className="workexperience-container">
-        <h1 className="workExperience-Title">Work experience</h1>
+      <h1 className={`workExperience-Title ${isVisible ? "fade-in-down" : ""}`}>
+        Work experience
+      </h1>
+      <div
+        className={`workexperience-container ${
+          isVisible ? "fade-in-down" : ""
+        }`}
+      >
         <Timeline align="alternate">
           <TimelineItem>
             <TimelineOppositeContent>
@@ -94,7 +118,7 @@ export default function WorkExperience() {
           <TimelineItem>
             <TimelineOppositeContent>
               <Typography variant="body2" color="black">
-                2021-2022
+                2016-2019
               </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>

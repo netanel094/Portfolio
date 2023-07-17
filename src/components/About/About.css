@@ -26,5 +26,6 @@
 }
 
 .fade-in-down {
-  animation: fade-in-down 4s ease-in-out;
+  opacity: 0;
+  animation: fade-in-down 3s ease-in-out forwards;
 }

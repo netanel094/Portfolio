@@ -1,9 +1,18 @@
 #workExperience {
-  background-color: rgb(177, 209, 212);
-  padding: 90px;
+  background-color: rgb(106, 178, 184);
+  padding: 50px;
 }
 
 .workExperience-Title {
+  color: azure;
   text-align: center;
-  padding-bottom: 100px;
+  text-shadow: 1px 5px 10px rgba(255, 255, 255, 0.4);
+}
+
+.workExperience-Title:hover {
+  color: rgb(12, 80, 86);
+}
+
+.workexperience-container {
+  padding-top: 80px;
 }
