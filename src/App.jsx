@@ -5,7 +5,7 @@ import About from "./components/About/About";
 import WorkExperience from "./components/WorkExperience/WorkExperience";
 import Card from "./components/carousel/Card";
 import Carousel from "./components/carousel/Carousel";
-import styled from "styled-components";
+import FooterComponent from "./components/Footer/Footer";
 import "./App.css";
 export default function App() {
   return (
@@ -32,6 +32,7 @@ export default function App() {
           text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
         />
       </Carousel>
+      <FooterComponent />
     </main>
   );
 }
