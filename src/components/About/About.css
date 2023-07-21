@@ -3,10 +3,6 @@
   text-align: center;
 }
 
-.aboutMeTitle {
-  color: #8bbccc;
-}
-
 @media (min-width: 768px) {
   .container-about {
     padding: 100px;

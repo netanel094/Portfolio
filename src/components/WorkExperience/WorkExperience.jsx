@@ -127,7 +127,11 @@ export default function WorkExperience() {
             </TimelineSeparator>
             <TimelineContent>
               <Paper elevation={3} className={classes.paper}>
-                <Typography variant="h6" component="h1">
+                <Typography
+                  variant="h6"
+                  component="h1"
+                  className={classes.boldText}
+                >
                   8200 Unit - Intelligence Analyst
                 </Typography>
                 <Typography>

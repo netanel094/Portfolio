@@ -6,13 +6,13 @@
   padding: 180px;
 }
 
-h1 {
+.title h1 {
   font-size: 6rem;
   line-height: 1.5;
   color: aliceblue;
 }
 
-h2 {
+.title h2 {
   color: azure;
 }
 
