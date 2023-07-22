@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./About.css";
-
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
 

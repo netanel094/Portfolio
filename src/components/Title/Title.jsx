@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Title.css";
+import { StyledTitle } from "../Global.styled";
 
 export default function Title() {
   const [typedName, setTypedName] = useState("");
@@ -50,7 +51,7 @@ export default function Title() {
   return (
     <section id="title">
       <div className="title text-center">
-        <h1 className="display-4 fw-bold myname">{typedName}</h1>
+        <StyledTitle>{typedName}</StyledTitle>
         <div className="col-lg-6 mx-auto">
           <h2 className="display-5 fw">{typedSubtitle}</h2>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">

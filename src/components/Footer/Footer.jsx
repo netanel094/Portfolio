@@ -1,19 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import { AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+
 const currentYear = new Date().getFullYear();
 
 export default function FooterComponent() {
   return (
     <Footer>
       <P>Netanel Yomtovian</P>
-      <Ul>
-        <Li>
-          <A href="#">Home</A>
-          <A href="#about">About</A>
-          <A href="#workExperience">Work experience</A>
-          <A href="#skills">Skills</A>
-        </Li>
-      </Ul>
+
+      <Li>
+        <A href="#">Home</A>
+        <A href="#about">About</A>
+        <A href="#workExperience">Work experience</A>
+        <A href="#skills">Skills</A>
+      </Li>
+      <Li>
+        <A href="mailto:Netanel094@gmail.com" title="Gmail">
+          <AiOutlineMail size={30} />
+        </A>
+        <A
+          href="https://www.linkedin.com/in/yourlinkedinprofile/"
+          title="LinkedIn"
+        >
+          <AiFillLinkedin size={30} />
+        </A>
+      </Li>
+
       {`Copyright © ${currentYear}`}
     </Footer>
   );
@@ -26,19 +39,19 @@ const P = styled.p`
 const Li = styled.li`
   display: list-item;
   list-style-type: none;
-  text-align: -webkit-match-parent;
+  padding-bottom: 25px;
 `;
 
 const A = styled.a`
   padding: 15px;
-`;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 
-const Ul = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin: 0 auto 3rem;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
 `;
 
 const Footer = styled.footer`

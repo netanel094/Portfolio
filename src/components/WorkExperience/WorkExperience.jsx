@@ -10,7 +10,7 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import "./WorkExperience.css";
-
+import { StyledTitle } from "../Global.styled";
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: "6px 16px",
@@ -50,9 +50,11 @@ export default function WorkExperience() {
 
   return (
     <section id="workExperience">
-      <h1 className={`workExperience-Title ${isVisible ? "fade-in-down" : ""}`}>
+      <StyledTitle
+        className={`workExperience-Title ${isVisible ? "fade-in-down" : ""}`}
+      >
         Work experience
-      </h1>
+      </StyledTitle>
       <div
         className={`workexperience-container ${
           isVisible ? "fade-in-down" : ""

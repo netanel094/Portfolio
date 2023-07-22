@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const limit = (min, number, max) => Math.max(Math.min(number, max), min);
 
 function NewCarousel({ children, width }) {
   const { length } = children;
   const clickRef = useRef(false);
+  const TouchRef = useRef(false);
   const [pos, setPos] = useState(0);
   const max = (length - 1) * width;
 
@@ -14,13 +17,25 @@ function NewCarousel({ children, width }) {
 
   const onMouseMove = (e) => {
     if (!clickRef.current) return;
-    setPos((prev) => Math.max(Math.min(prev - e.movementX, max), 0));
+    const { movementX } = e;
+    setPos((prev) => limit(0, prev - movementX, max));
   };
 
   const handleMouseUp = useCallback(() => {
     clickRef.current = false;
     setPos((prev) => Math.round(prev / width) * width);
   }, [width]);
+
+  const handleTouchStart = (e) => {
+    clickRef.current = true;
+    TouchRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    const movementX = e.touches[0].clientX - TouchRef.current;
+    TouchRef.current = e.touches[0].clientX;
+    setPos((prev) => limit(0, prev - movementX, max));
+  };
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -29,30 +44,30 @@ function NewCarousel({ children, width }) {
   }, [handleMouseUp, width]);
 
   return (
-    <Section id="skills">
-      <Title>Skills</Title>
-      <Wrapper id="Wrapper" width={width}>
-        <WrapperWrapper
-          id="WrapperWrapper"
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          pos={pos}
-          length={length}
-        >
-          {children.map((child, index) => (
-            <Box
-              key={`Box_${index}`}
-              index={index}
-              pos={pos}
-              width={width}
-              length={length}
-            >
-              {child}
-            </Box>
-          ))}
-        </WrapperWrapper>
-      </Wrapper>
-    </Section>
+    <Wrapper
+      id="Wrapper"
+      width={width}
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleMouseUp}
+      clickRef={clickRef}
+    >
+      <WrapperWrapper id="WrapperWrapper" pos={pos} length={length}>
+        {children.map((child, index) => (
+          <Box
+            key={`Box_${index}`}
+            index={index}
+            pos={pos}
+            width={width}
+            length={length}
+          >
+            {child}
+          </Box>
+        ))}
+      </WrapperWrapper>
+    </Wrapper>
   );
 }
 
@@ -63,10 +78,33 @@ NewCarousel.propTypes = {
 
 export default NewCarousel;
 
+const Box = styled.div.attrs(({ pos, index, width, length }) => ({
+  style: {
+    scale: `${1 - Math.abs(width * index - pos) / (width * length)}`,
+  },
+}))`
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--box-size);
+  transition: scale 400ms ease-in-out;
+`;
+
+const WrapperWrapper = styled.div.attrs(({ pos }) => ({
+  style: { translate: `calc( 50% - (var(--box-size) / 2) - ${pos}px ) 0` },
+}))`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: translate 400ms ease-in-out;
+`;
+
 const Wrapper = styled.div`
   --box-size: ${({ width }) => `${width}px`};
   overflow: hidden;
+  border: 1px solid;
   width: 100%;
+
   --mask: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0) 0%,
@@ -78,46 +116,17 @@ const Wrapper = styled.div`
 
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  padding-top: 100px;
-`;
 
-const Box = styled.div.attrs(({ pos, index, width, length }) => ({
-  style: {
-    scale: `${1 - Math.abs(width * index - pos) / (width * length)}`,
-  },
-}))`
-  width: var(--box-size);
-  height: var(--box-size);
-`;
-
-const WrapperWrapper = styled.div.attrs(({ pos }) => ({
-  style: { translate: `calc( 50% - (var(--box-size) / 2) - ${pos}px ) 0` },
-}))`
-  display: flex;
-  height: 100%;
-  width: 100%;
-  &:not(&:active) {
-    cursor: grab;
-    transition: translate 400ms ease-in-out;
-    ${Box} {
-      transition: scale 400ms ease-in-out;
-    }
-  }
-  &:active {
-    cursor: grabbing;
-  }
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  font-size: 6rem;
-  line-height: 1.5;
-  color: #1b2430;
-  text-shadow: 1px 5px 10px rgba(255, 255, 255, 0.4);
-`;
-
-const Section = styled.section`
-  width: 100%;
-  background-color: #eaeaea;
-  display: block;
+  cursor: grab;
+  ${({ clickRef }) =>
+    clickRef.current &&
+    css`
+      cursor: grabbing;
+      ${WrapperWrapper} {
+        transition: none;
+      }
+      ${Box} {
+        transition: none;
+      }
+    `}
 `;
