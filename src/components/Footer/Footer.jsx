@@ -20,7 +20,7 @@ export default function FooterComponent() {
           <AiOutlineMail size={30} />
         </A>
         <A
-          href="https://www.linkedin.com/in/yourlinkedinprofile/"
+          href="https://www.linkedin.com/in/netanel-yomtovian/  "
           title="LinkedIn"
         >
           <AiFillLinkedin size={30} />

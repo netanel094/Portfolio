@@ -11,7 +11,7 @@ function Card({ imgSrc, title, text, link }) {
       <Img src={imgSrc} draggable="false" />
       <Title>{title}</Title>
       <Content>{text}</Content>
-      <Button onClick={handleButtonClick}>Github Link</Button>
+      <Button onClick={handleButtonClick}>Link</Button>
     </Wrapper>
   );
 }
@@ -61,7 +61,7 @@ const Button = styled.button`
   background-color: rgb(106, 178, 184);
   color: #ffffff;
   border: none;
-  padding: 15px;
+  padding: 15px 30px;
   border-radius: 7px;
   cursor: pointer;
   margin-top: 15px;

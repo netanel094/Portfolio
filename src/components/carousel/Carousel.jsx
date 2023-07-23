@@ -44,7 +44,7 @@ function NewCarousel({ children, width }) {
   }, [handleMouseUp, width]);
 
   return (
-    <section id="carousel">
+    <Section id="carousel">
       <H1>Projects</H1>
       <Wrapper
         id="Wrapper"
@@ -70,7 +70,7 @@ function NewCarousel({ children, width }) {
           ))}
         </WrapperWrapper>
       </Wrapper>
-    </section>
+    </Section>
   );
 }
 
@@ -85,6 +85,11 @@ const H1 = styled.h1`
   text-align: center;
   font-size: 6rem;
   line-height: 2;
+`;
+
+const Section = styled.section`
+  background-color: rgb(234, 234, 234);
+  padding-bottom: 60px;
 `;
 
 const Box = styled.div.attrs(({ pos, index, width, length }) => ({
@@ -111,6 +116,7 @@ const WrapperWrapper = styled.div.attrs(({ pos }) => ({
 const Wrapper = styled.div`
   --box-size: ${({ width }) => `${width}px`};
   overflow: hidden;
+  background-color: rgb(234, 234, 234);
 
   width: 100%;
 
