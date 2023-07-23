@@ -1,12 +1,17 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-function Card({ imgSrc, title, text }) {
+function Card({ imgSrc, title, text, link }) {
+  const handleButtonClick = () => {
+    window.location.href = link;
+  };
+
   return (
     <Wrapper>
       <Img src={imgSrc} draggable="false" />
       <Title>{title}</Title>
-      {text}
+      <Content>{text}</Content>
+      <Button onClick={handleButtonClick}>Github Link</Button>
     </Wrapper>
   );
 }
@@ -15,6 +20,7 @@ Card.propTypes = {
   imgSrc: PropTypes.string,
   title: PropTypes.string,
   text: PropTypes.string,
+  link: PropTypes.string,
 };
 
 export default Card;
@@ -35,7 +41,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding: 50px;
+  padding: 40px;
   box-sizing: border-box;
   user-select: none;
 `;
@@ -43,4 +49,28 @@ const Wrapper = styled.div`
 const Img = styled.img`
   width: 12rem;
   padding-bottom: 15px;
+`;
+
+const Content = styled.p`
+  font-size: 1.1rem;
+  color: black;
+  text-align: left;
+`;
+
+const Button = styled.button`
+  background-color: rgb(106, 178, 184);
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 15px;
+  &:hover {
+    background-color: rgb(106, 200, 200);
+  }
+
+  &:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Add a custom focus style */
+  }
 `;
