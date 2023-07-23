@@ -13,6 +13,7 @@ import "./WorkExperience.css";
 import { StyledTitle } from "../Global.styled";
 const useStyles = makeStyles((theme) => ({
   paper: {
+    textAlign: "left",
     padding: "6px 16px",
     backgroundColor: "#468B97",
     opacity: 0,
