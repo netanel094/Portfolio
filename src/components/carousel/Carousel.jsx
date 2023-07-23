@@ -46,6 +46,8 @@ function NewCarousel({ children, width }) {
   return (
     <Section id="carousel">
       <H1>Projects</H1>
+      <Swipe src="./images/swipe.png"></Swipe>
+
       <Wrapper
         id="Wrapper"
         width={width}
@@ -144,4 +146,11 @@ const Wrapper = styled.div`
         transition: none;
       }
     `}
+`;
+
+const Swipe = styled.img`
+  width: 40px; /* Change this value to set the desired width */
+  margin: 0 auto;
+  display: flex;
+  padding-bottom: 30px;
 `;
