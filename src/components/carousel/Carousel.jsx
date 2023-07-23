@@ -44,30 +44,33 @@ function NewCarousel({ children, width }) {
   }, [handleMouseUp, width]);
 
   return (
-    <Wrapper
-      id="Wrapper"
-      width={width}
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleMouseUp}
-      clickRef={clickRef}
-    >
-      <WrapperWrapper id="WrapperWrapper" pos={pos} length={length}>
-        {children.map((child, index) => (
-          <Box
-            key={`Box_${index}`}
-            index={index}
-            pos={pos}
-            width={width}
-            length={length}
-          >
-            {child}
-          </Box>
-        ))}
-      </WrapperWrapper>
-    </Wrapper>
+    <section id="carousel">
+      <H1>Projects</H1>
+      <Wrapper
+        id="Wrapper"
+        width={width}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleMouseUp}
+        clickRef={clickRef}
+      >
+        <WrapperWrapper id="WrapperWrapper" pos={pos} length={length}>
+          {children.map((child, index) => (
+            <Box
+              key={`Box_${index}`}
+              index={index}
+              pos={pos}
+              width={width}
+              length={length}
+            >
+              {child}
+            </Box>
+          ))}
+        </WrapperWrapper>
+      </Wrapper>
+    </section>
   );
 }
 
@@ -77,6 +80,12 @@ NewCarousel.propTypes = {
 };
 
 export default NewCarousel;
+
+const H1 = styled.h1`
+  text-align: center;
+  font-size: 6rem;
+  line-height: 2;
+`;
 
 const Box = styled.div.attrs(({ pos, index, width, length }) => ({
   style: {
@@ -102,7 +111,7 @@ const WrapperWrapper = styled.div.attrs(({ pos }) => ({
 const Wrapper = styled.div`
   --box-size: ${({ width }) => `${width}px`};
   overflow: hidden;
-  border: 1px solid;
+
   width: 100%;
 
   --mask: linear-gradient(
