@@ -71,8 +71,11 @@ export default function WorkExperience() {
               <TimelineDot></TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>
-              <Paper elevation={3} className={classes.paper}>
+            <TimelineContent className="customTimelineContent">
+              <Paper
+                elevation={5}
+                className={`${classes.paper} customPaperRoot`}
+              >
                 <Typography
                   variant="h6"
                   component="h1"
@@ -99,7 +102,10 @@ export default function WorkExperience() {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Paper elevation={3} className={classes.paper}>
+              <Paper
+                elevation={5}
+                className={`${classes.paper} customPaperRoot`}
+              >
                 <Typography
                   variant="h6"
                   component="h1"
@@ -128,7 +134,10 @@ export default function WorkExperience() {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <Paper elevation={3} className={classes.paper}>
+              <Paper
+                elevation={5}
+                className={`${classes.paper} customPaperRoot`}
+              >
                 <Typography
                   variant="h6"
                   component="h1"
