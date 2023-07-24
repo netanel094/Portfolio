@@ -6,6 +6,7 @@ import WorkExperience from "./components/WorkExperience/WorkExperience";
 import Card from "./components/carousel/Card";
 import Carousel from "./components/carousel/Carousel";
 import FooterComponent from "./components/Footer/Footer";
+import Skills from "./components/Skills/Skills";
 import "./App.css";
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Title />
       <About />
       <WorkExperience />
+
       <Carousel width={500}>
         <Card
           imgSrc="/images/web-security.svg"
@@ -40,6 +42,7 @@ export default function App() {
           link="https://github.com/netanel094/stock-trend-price-prediction"
         />
       </Carousel>
+      <Skills />
       <FooterComponent />
     </main>
   );

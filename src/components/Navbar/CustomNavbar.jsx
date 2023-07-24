@@ -43,7 +43,11 @@ function CustomNavbar() {
               >
                 Skills
               </Nav.Link>
-              <Nav.Link href="#link" className="nav-link">
+              <Nav.Link
+                href="#link"
+                className="nav-link"
+                onClick={(event) => handleNavClick(event, "projects")}
+              >
                 Projects
               </Nav.Link>
               <Nav.Link href="#link" className="nav-link">

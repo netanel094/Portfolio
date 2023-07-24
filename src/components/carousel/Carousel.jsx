@@ -44,7 +44,7 @@ function NewCarousel({ children, width }) {
   }, [handleMouseUp, width]);
 
   return (
-    <Section id="carousel">
+    <Section id="projects">
       <H1>Projects</H1>
       <Swipe src="./images/swipe.png"></Swipe>
 

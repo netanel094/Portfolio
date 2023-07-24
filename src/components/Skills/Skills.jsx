@@ -1,0 +1,102 @@
+import React from "react";
+import styled from "styled-components";
+
+export default function Skills() {
+  return (
+    <Section id="skills">
+      <SectionTitle>Skills</SectionTitle>
+      <SkillContainer>
+        <H1>Programming languages</H1>
+        <ContentList>
+          <Content>JavaScript</Content>
+          <Content>React</Content>
+          <Content>HTML</Content>
+          <Content>CSS</Content>
+          <Content>Express JS</Content>
+          <Content>Node JS</Content>
+          <Content>Python</Content>
+          <Content>Java</Content>
+          <Content>C++</Content>
+          <Content>C#</Content>
+        </ContentList>
+      </SkillContainer>
+      <SkillContainer>
+        <H1>Data bases</H1>
+        <ContentList>
+          <Content>SQL (MySQL)</Content>
+          <Content>NoSQL (MongoDB)</Content>
+        </ContentList>
+      </SkillContainer>
+      <SkillContainer>
+        <H1>Tools</H1>
+        <ContentList>
+          <Content>Git</Content>
+          <Content>Jenkins</Content>
+          <Content>Selenium IDE</Content>
+          <Content>Jira</Content>
+          <Content>Postman</Content>
+        </ContentList>
+      </SkillContainer>
+    </Section>
+  );
+}
+
+const SectionTitle = styled.h2`
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+  line-height: 1.5;
+  text-shadow: 1px 5px 10px rgba(255, 255, 255, 0.4);
+`;
+const Section = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(106, 178, 184);
+`;
+
+const SkillContainer = styled.div`
+  background-color: rgb(240, 240, 240);
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+  margin: 25px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    background-color: rgb(220, 220, 220);
+  }
+`;
+
+const H1 = styled.h1`
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(80, 80, 80);
+  margin-bottom: 20px;
+`;
+
+const ContentList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Content = styled.div`
+  font-size: 1.6rem;
+  color: rgb(50, 50, 50);
+  padding: 8px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
