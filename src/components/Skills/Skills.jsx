@@ -8,23 +8,47 @@ export default function Skills() {
       <SkillContainer>
         <H1>Programming languages</H1>
         <ContentList>
-          <Content>JavaScript</Content>
-          <Content>React</Content>
-          <Content>HTML</Content>
-          <Content>CSS</Content>
-          <Content>Express JS</Content>
-          <Content>Node JS</Content>
-          <Content>Python</Content>
-          <Content>Java</Content>
-          <Content>C++</Content>
-          <Content>C#</Content>
+          <Content>
+            JavaScript <Img src="/images/logo-icons/js.png"></Img>
+          </Content>
+          <Content>
+            React <Img src="/images/logo-icons/react.png"></Img>
+          </Content>
+          <Content>
+            HTML <Img src="/images/logo-icons/html-5.png"></Img>
+          </Content>
+          <Content>
+            CSS <Img src="/images/logo-icons/css-3.png"></Img>
+          </Content>
+          <Content>
+            Express JS <Img src="/images/logo-icons/express-js.png"></Img>
+          </Content>
+          <Content>
+            Node JS <Img src="/images/logo-icons/node-js.png"></Img>
+          </Content>
+          <Content>
+            Python <Img src="/images/logo-icons/python.png"></Img>
+          </Content>
+          <Content>
+            Java <Img src="/images/logo-icons/java.png"></Img>
+          </Content>
+          <Content>
+            C++ <Img src="/images/logo-icons/c-.png"></Img>
+          </Content>
+          <Content>
+            C# <Img src="/images/logo-icons/c-sharp.png"></Img>
+          </Content>
         </ContentList>
       </SkillContainer>
       <SkillContainer>
         <H1>Data bases</H1>
         <ContentList>
-          <Content>SQL (MySQL)</Content>
-          <Content>NoSQL (MongoDB)</Content>
+          <Content>
+            SQL (MySQL) <Img src="/images/logo-icons/c-sharp.png"></Img>
+          </Content>
+          <Content>
+            NoSQL (MongoDB) <Img src="/images/logo-icons/c-sharp.png"></Img>
+          </Content>
         </ContentList>
       </SkillContainer>
       <SkillContainer>
@@ -99,4 +123,12 @@ const Content = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  &:hover {
+    color: rgb(106, 178, 184); /* Change to the color you want on hover */
+  }
+`;
+
+const Img = styled.img`
+  width: 40px;
 `;

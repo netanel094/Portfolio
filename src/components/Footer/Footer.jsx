@@ -58,4 +58,6 @@ const Footer = styled.footer`
   background-color: rgb(106, 178, 184);
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 `;
