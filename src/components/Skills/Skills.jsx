@@ -54,11 +54,21 @@ export default function Skills() {
       <SkillContainer>
         <H1>Tools</H1>
         <ContentList>
-          <Content>Git</Content>
-          <Content>Jenkins</Content>
-          <Content>Selenium IDE</Content>
-          <Content>Jira</Content>
-          <Content>Postman</Content>
+          <Content>
+            Git <Img src="/images/logo-icons/git.png"></Img>
+          </Content>
+          <Content>
+            Jenkins <Img src="/images/logo-icons/jenkins.png"></Img>
+          </Content>
+          <Content>
+            Selenium IDE <Img src="/images/logo-icons/selenium.png"></Img>
+          </Content>
+          <Content>
+            Jira <Img src="/images/logo-icons/jira.png"></Img>
+          </Content>
+          <Content>
+            Postman <Img src="/images/logo-icons/postman.png"></Img>
+          </Content>
         </ContentList>
       </SkillContainer>
     </Section>
