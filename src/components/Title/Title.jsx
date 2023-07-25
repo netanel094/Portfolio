@@ -5,10 +5,9 @@ import { StyledTitle } from "../Global.styled";
 export default function Title() {
   const [typedName, setTypedName] = useState("");
   const [typedSubtitle, setTypedSubtitle] = useState("");
-  const myName = "Netanel Yomtovian"; // The full text to be typed out
-  const mySubtitle = "A full-stack developer"; // The full subtitle to be typed out
-  const typingSpeed = 100; // The speed of typing in milliseconds
-
+  const myName = "Netanel Yomtovian";
+  const mySubtitle = "A full-stack developer";
+  const typingSpeed = 100;
   useEffect(() => {
     let currentName = "";
     let currentSubtitle = "";
@@ -41,7 +40,7 @@ export default function Title() {
   }, []);
 
   const DownloandMyResume = () => {
-    window.open(`${process.env.PUBLIC_URL}/Resume.pdf`, "_blank");
+    window.open(`${process.env.PUBLIC_URL}/newResume.pdf`, "_blank");
   };
 
   const GithubLink = () => {
@@ -60,17 +59,23 @@ export default function Title() {
               className="btn btn-primary btn-lg"
               onClick={DownloandMyResume}
             >
-              📄 My resume
+              <img
+                src="/images/resume.png"
+                width={"30"}
+                height={"30"}
+                alt="Resume"
+              ></img>{" "}
+              My resume
             </button>
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-secondary btn-lg"
               onClick={GithubLink}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
+                width="25"
+                height="25"
                 fill="currentColor"
                 class="bi bi-github"
                 viewBox="0 0 16 16"

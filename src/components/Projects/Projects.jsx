@@ -39,7 +39,9 @@ export default function Projects() {
 }
 
 const Title = styled(StyledTitle)`
-  color: black;
+  color: #2f2f2f;
+  font-weight: bold;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 1);
 `;
 
 const Section = styled.section`

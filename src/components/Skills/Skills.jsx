@@ -28,7 +28,7 @@ export default function Skills() {
 
 const Data = [
   {
-    name: "Data base",
+    name: "Data bases",
     content: [
       { name: "SQL (MySQL)", logo: "mysql.png" },
       { name: "NoSQL (MongoDB)", logo: "mongodb.png" },
@@ -63,6 +63,7 @@ const Data = [
 
 const SectionTitle = styled(StyledTitle)`
   color: white;
+  font-weight: bold;
 `;
 
 const Section = styled.section`

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+import { StyledTitle } from "../Global.styled";
 
 const currentYear = new Date().getFullYear();
 
@@ -8,7 +9,6 @@ export default function FooterComponent() {
   return (
     <Footer>
       <P>Netanel Yomtovian</P>
-
       <Li>
         <A href="#">Home</A>
         <A href="#about">About</A>
@@ -26,14 +26,14 @@ export default function FooterComponent() {
           <AiFillLinkedin size={30} />
         </A>
       </Li>
-
-      {`Copyright © ${currentYear}`}
     </Footer>
   );
 }
 
-const P = styled.p`
+const P = styled(StyledTitle)`
   font-size: 2rem;
+  color: white;
+  font-weight: bold;
 `;
 
 const Li = styled.li`
@@ -55,7 +55,7 @@ const A = styled.a`
 `;
 
 const Footer = styled.footer`
-  background-color: rgb(2, 169, 244);
+  background-color: #6ab2b8;
   padding: 30px;
   text-align: center;
   display: flex;

@@ -3,18 +3,6 @@
   padding: 50px;
 }
 
-.workExperience-Title {
-  color: azure;
-  transition: 0.5s ease;
-  font-size: 6rem;
-  text-align: center;
-  text-shadow: 1px 5px 10px rgba(255, 255, 255, 0.4);
-}
-
-.workExperience-Title:hover {
-  color: rgb(12, 80, 86);
-}
-
 .workexperience-container {
   padding-top: 60px;
   display: flex;
