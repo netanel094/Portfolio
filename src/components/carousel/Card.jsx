@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-function Card({ imgSrc, title, text, link }) {
+export default function Card({ imgSrc, title, text, link }) {
   const handleButtonClick = () => {
     window.location.href = link;
   };
@@ -22,8 +22,6 @@ Card.propTypes = {
   text: PropTypes.string,
   link: PropTypes.string,
 };
-
-export default Card;
 
 const Title = styled.h2`
   font-size: 1.5rem;

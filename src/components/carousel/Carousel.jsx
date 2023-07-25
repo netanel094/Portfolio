@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
-
 const limit = (min, number, max) => Math.max(Math.min(number, max), min);
 
-function NewCarousel({ children, width }) {
+export default function Carousel({ children, width }) {
   const { length } = children;
   const clickRef = useRef(false);
   const TouchRef = useRef(false);
@@ -44,55 +43,37 @@ function NewCarousel({ children, width }) {
   }, [handleMouseUp, width]);
 
   return (
-    <Section id="projects">
-      <H1>Projects</H1>
-      <Swipe src="./images/swipe.png"></Swipe>
-
-      <Wrapper
-        id="Wrapper"
-        width={width}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleMouseUp}
-        clickRef={clickRef}
-      >
-        <WrapperWrapper id="WrapperWrapper" pos={pos} length={length}>
-          {children.map((child, index) => (
-            <Box
-              key={`Box_${index}`}
-              index={index}
-              pos={pos}
-              width={width}
-              length={length}
-            >
-              {child}
-            </Box>
-          ))}
-        </WrapperWrapper>
-      </Wrapper>
-    </Section>
+    <Wrapper
+      id="Wrapper"
+      width={width}
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleMouseUp}
+      clickRef={clickRef}
+    >
+      <WrapperWrapper id="WrapperWrapper" pos={pos} length={length}>
+        {children.map((child, index) => (
+          <Box
+            key={`Box_${index}`}
+            index={index}
+            pos={pos}
+            width={width}
+            length={length}
+          >
+            {child}
+          </Box>
+        ))}
+      </WrapperWrapper>
+    </Wrapper>
   );
 }
 
-NewCarousel.propTypes = {
+Carousel.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node).isRequired,
   width: PropTypes.number.isRequired,
 };
-
-export default NewCarousel;
-
-const H1 = styled.h1`
-  text-align: center;
-  font-size: 6rem;
-  line-height: 2;
-`;
-
-const Section = styled.section`
-  background-color: rgb(234, 234, 234);
-  padding-bottom: 60px;
-`;
 
 const Box = styled.div.attrs(({ pos, index, width, length }) => ({
   style: {
@@ -146,11 +127,4 @@ const Wrapper = styled.div`
         transition: none;
       }
     `}
-`;
-
-const Swipe = styled.img`
-  width: 40px; /* Change this value to set the desired width */
-  margin: 0 auto;
-  display: flex;
-  padding-bottom: 30px;
 `;

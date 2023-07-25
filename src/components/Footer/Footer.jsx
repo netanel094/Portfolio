@@ -55,7 +55,7 @@ const A = styled.a`
 `;
 
 const Footer = styled.footer`
-  background-color: rgb(106, 178, 184);
+  background-color: rgb(2, 169, 244);
   padding: 30px;
   text-align: center;
   display: flex;

@@ -54,7 +54,7 @@ export default function Title() {
         <StyledTitle>{typedName}</StyledTitle>
         <div className="col-lg-6 mx-auto">
           <h2 className="display-5 fw">{typedSubtitle}</h2>
-          <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <div className="d-grid">
             <button
               type="button"
               className="btn btn-primary btn-lg"
