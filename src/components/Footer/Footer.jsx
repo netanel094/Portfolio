@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { StyledTitle } from "../Global.styled";
 
-const currentYear = new Date().getFullYear();
-
 export default function FooterComponent() {
   return (
     <Footer>

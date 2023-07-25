@@ -50,7 +50,7 @@ function CustomNavbar() {
               >
                 Projects
               </Nav.Link>
-              <Nav.Link href="#link" className="nav-link">
+              <Nav.Link href="#contact" className="nav-link">
                 Contact
               </Nav.Link>
             </Nav>

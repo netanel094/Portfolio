@@ -5,7 +5,7 @@ import Card from "../carousel/Card";
 import { StyledTitle } from "../Global.styled";
 export default function Projects() {
   return (
-    <Section>
+    <Section id="projects">
       <Title>Projects</Title>
       <Swipe src="./images/swipe.png"></Swipe>
       <Carousel width={500}>
