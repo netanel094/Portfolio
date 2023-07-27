@@ -15,7 +15,7 @@ export default function Contact() {
       <BoxWrapper>
         <Box href="mailto:Netanel094@gmail.com">
           <h2>
-            Email <img src="images/email.png" alt="Email" />
+            Email <img src="images/gmail.png" alt="Email" />
           </h2>
         </Box>
         <Box onClick={handleWhatsAppClick}>
