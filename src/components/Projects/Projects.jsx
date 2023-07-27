@@ -10,7 +10,7 @@ export default function Projects() {
       <Swipe src="./images/swipe.png"></Swipe>
       <Carousel width={500}>
         <Card
-          imgSrc="/images/web-security.svg"
+          imgSrc="/images/portfolio.png"
           title="Portfolio"
           text="A React App that present my resume in an attractive and interesting way."
           link="https://github.com/netanel094/Portfolio/tree/main"
