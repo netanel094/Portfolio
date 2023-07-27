@@ -8,13 +8,20 @@ export default function Projects() {
     <Section id="projects">
       <Title>Projects</Title>
       <Swipe src="./images/swipe.png"></Swipe>
-      <Carousel width={400}>
+      <Carousel width={500}>
+        <Card
+          imgSrc="/images/web-security.svg"
+          title="Portfolio"
+          text="A React App that present my resume in an attractive and interesting way."
+          link="https://github.com/netanel094/Portfolio/tree/main"
+        />
         <Card
           imgSrc="/images/web-security.svg"
           title="Full stack - Web security"
-          text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          text="Building two websites with login and register functionality, along with a user system page to manage customer data. The aim of the project is to demonstrate the importance of computer security by implementing security measures in one website to protect against Stored XSS (Cross-Site Scripting) attacks and SQL injection attacks."
           link="https://github.com/netanel094/Computer-security"
         />
+
         <Card
           imgSrc="/images/shop.png"
           title="Shoes store management system"
