@@ -64,9 +64,7 @@ export default function WorkExperience() {
         <Timeline align="alternate">
           <TimelineItem>
             <TimelineOppositeContent>
-              <Typography variant="body2" color="black ">
-                2022-2023
-              </Typography>
+              <Typography variant="body2">2022-2023</Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot></TimelineDot>
@@ -94,9 +92,7 @@ export default function WorkExperience() {
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent>
-              <Typography variant="body2" color="black">
-                2021-2022
-              </Typography>
+              <Typography variant="body2">2021-2022</Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot></TimelineDot>
@@ -126,9 +122,7 @@ export default function WorkExperience() {
 
           <TimelineItem>
             <TimelineOppositeContent>
-              <Typography variant="body2" color="black">
-                2016-2019
-              </Typography>
+              <Typography variant="body2">2016-2019</Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot></TimelineDot>

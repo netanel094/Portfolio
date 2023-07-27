@@ -8,12 +8,12 @@ export default function Skills() {
       <SectionTitle>Skills</SectionTitle>
       <SkillWrapper>
         {Data.map((field) => (
-          <SkillContainer>
+          <SkillContainer key={field.name}>
             <SkillField>{field.name}</SkillField>
 
             <ContentList>
               {field.content.map((content) => (
-                <Content>
+                <Content key={content.name}>
                   {content.name}
                   <Img src={`/images/logo-icons/${content.logo}`}></Img>
                 </Content>

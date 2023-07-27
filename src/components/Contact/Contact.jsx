@@ -2,9 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { StyledTitle } from "../Global.styled";
 export default function Contact() {
-  const handleEmailClick = () => {
-    window.location.href = "mailto:Netanel094@gmail.com";
-  };
   const handleLinkedInClick = () => {
     window.location.href = "https://www.linkedin.com/in/netanel-yomtovian/";
   };
@@ -16,7 +13,7 @@ export default function Contact() {
     <Section id="contact">
       <SectionTitle>Contact me</SectionTitle>
       <BoxWrapper>
-        <Box onClick={handleEmailClick}>
+        <Box href="mailto:Netanel094@gmail.com">
           <h2>
             Email <img src="images/email.png" alt="Email" />
           </h2>
@@ -49,22 +46,21 @@ const SectionTitle = styled(StyledTitle)`
 `;
 
 const BoxWrapper = styled.div`
-  height: 50vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
+  flex-wrap: wrap;
 `;
 
-const Box = styled.button`
-  width: 300px;
-  height: 220px;
+const Box = styled.a`
+  padding: 50px;
   border-radius: 15px;
   background: rgb(106, 178, 184);
   margin: 50px;
   transition: background-color 0.4s ease-in-out;
-
+  color: black;
+  text-decoration: none;
   &:hover {
     background: #057a85;
   }

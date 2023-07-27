@@ -51,7 +51,7 @@ export default function Carousel({ children, width }) {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleMouseUp}
-      clickRef={clickRef}
+      isclicked={clickRef.current}
     >
       <WrapperWrapper id="WrapperWrapper" pos={pos} length={length}>
         {children.map((child, index) => (
@@ -116,8 +116,8 @@ const Wrapper = styled.div`
   mask: var(--mask);
 
   cursor: grab;
-  ${({ clickRef }) =>
-    clickRef.current &&
+  ${({ isclicked }) =>
+    isclicked &&
     css`
       cursor: grabbing;
       ${WrapperWrapper} {

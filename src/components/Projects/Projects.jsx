@@ -8,7 +8,7 @@ export default function Projects() {
     <Section id="projects">
       <Title>Projects</Title>
       <Swipe src="./images/swipe.png"></Swipe>
-      <Carousel width={500}>
+      <Carousel width={400}>
         <Card
           imgSrc="/images/web-security.svg"
           title="Full stack - Web security"

@@ -34,6 +34,7 @@ const Wrapper = styled.div`
   border-radius: 20px;
   width: calc(100% - var(--margin) * 2);
   height: calc(100% - var(--margin) * 2);
+  max-width: 85vw;
   margin: var(--margin);
   display: flex;
   flex-direction: column;
@@ -42,6 +43,7 @@ const Wrapper = styled.div`
   padding: 30px;
   box-sizing: border-box;
   user-select: none;
+  margin-inline: auto;
 `;
 
 const Img = styled.img`
