@@ -40,7 +40,8 @@ export default function Title() {
   }, []);
 
   const DownloandMyResume = () => {
-    window.open(`${process.env.PUBLIC_URL}/newResume.pdf`, "_blank");
+    window.location.href =
+      "https://drive.google.com/file/d/1pPSR0hlDt45zQVOpxUZZflkoNKgUWk6m/view?usp=sharing";
   };
 
   const GithubLink = () => {
