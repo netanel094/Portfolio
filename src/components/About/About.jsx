@@ -27,17 +27,20 @@ export default function About() {
       >
         <div className="py-5">
           <h1 className="display-2 fw-bold text-black">About me</h1>
-          <div className="col-lg-6 mx-auto">
-            <p className="fs-5 mb-4">
+          <div className="col-lg-9 mx-auto">
+            <p className="fs-6 mb-5">
               <strong>
-                An Intelligence Analyst from 8200 Unit, bachelor's degree in
-                computer science.
+                Former intelligence analyst at 8200 Unit holding a B.Sc for
+                Computer Science.
               </strong>
               <br />A strong team player, have excellent problem-solving skills
               and can handle multiple tasks simultaneously. Have a natural
               tendency to learn fast and have a real passion for keeping up to
-              date with the latest industry trends and technologies. Eager to
-              grow in the development field.
+              date with the latest industry trends and technologies.
+              <strong>
+                <br />
+                I'm eager to grow in the development field.
+              </strong>
             </p>
           </div>
         </div>
