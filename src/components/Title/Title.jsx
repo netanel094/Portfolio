@@ -6,7 +6,8 @@ export default function Title() {
   const [typedName, setTypedName] = useState("");
   const [typedSubtitle, setTypedSubtitle] = useState("");
   const myName = "Netanel Yomtovian";
-  const mySubtitle = "Software Engineer | Backend Devoleper | Full Stack Developer | Former Intelligence Analyst in Unit 8200";
+  const mySubtitle =
+    "Software Engineer | Backend Developer | Full Stack Developer | Former Intelligence Analyst in Unit 8200";
   const typingSpeed = 100;
   useEffect(() => {
     let currentName = "";
