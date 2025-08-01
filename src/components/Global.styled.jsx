@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTitle = styled.h2`
+
   font-size: 6rem;
   line-height: 1.5;
   color: aliceblue;

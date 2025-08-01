@@ -1,5 +1,6 @@
 import React from "react";
-import "./Navbar.css";
+import styled from "styled-components";
+import colors from "../colors";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -13,52 +14,95 @@ function CustomNavbar() {
     }
   };
   return (
-    <section id="navbar">
-      <Navbar expand="lg" className="navbar bg-body-tertiary">
+    <NavSection id="navbar">
+      <StyledNavbar expand="lg">
         <Container className="d-flex justify-content-center">
-          <Navbar.Brand
-            className="brand"
-            onClick={(event) => handleNavClick(event, "title")}
-          >
+          <Brand onClick={(event) => handleNavClick(event, "title")}>
             Portfolio
-          </Navbar.Brand>
+          </Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link
-                className="nav-link"
+            <StyledNav className="me-auto">
+              <StyledNavLink
                 onClick={(event) => handleNavClick(event, "about")}
               >
                 About
-              </Nav.Link>
-              <Nav.Link
-                className="nav-link"
+              </StyledNavLink>
+              <StyledNavLink
                 onClick={(event) => handleNavClick(event, "workExperience")}
               >
                 Work experience
-              </Nav.Link>
-              <Nav.Link
-                className="nav-link"
+              </StyledNavLink>
+              <StyledNavLink
                 onClick={(event) => handleNavClick(event, "skills")}
               >
                 Skills
-              </Nav.Link>
-              <Nav.Link
-                href="#link"
-                className="nav-link"
+              </StyledNavLink>
+              <StyledNavLink
                 onClick={(event) => handleNavClick(event, "projects")}
               >
                 Projects
-              </Nav.Link>
-              <Nav.Link href="#contact" className="nav-link">
+              </StyledNavLink>
+              <StyledNavLink as="a" href="#contact">
                 Contact
-              </Nav.Link>
-            </Nav>
+              </StyledNavLink>
+            </StyledNav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
-    </section>
+      </StyledNavbar>
+    </NavSection>
   );
 }
 
 export default CustomNavbar;
+
+const NavSection = styled.section`
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+`;
+
+const StyledNavbar = styled(Navbar)`
+  background: ${colors.backgroundGradient} !important;
+  box-shadow: 0 2px 16px rgba(56, 189, 248, 0.08);
+  padding: 0.5rem 0;
+`;
+
+const Brand = styled(Navbar.Brand)`
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: ${colors.mainTitleGradient};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 80px;
+  cursor: pointer;
+`;
+
+const StyledNav = styled(Nav)`
+  display: flex;
+  align-items: center;
+  gap: 36px;
+`;
+
+const StyledNavLink = styled(Nav.Link)`
+  font-size: 1.15rem;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: ${colors.subTitleColor} !important;
+  background: none;
+  border: none;
+  margin-right: 0;
+  position: relative;
+  transition: color 0.3s;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${colors.secondary} !important;
+    background: #e0f2fe;
+  }
+`;

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
+import colors from "../colors";
 const limit = (min, number, max) => Math.max(Math.min(number, max), min);
 
 export default function Carousel({ children, width }) {
@@ -99,7 +100,7 @@ const WrapperWrapper = styled.div.attrs(({ pos }) => ({
 const Wrapper = styled.div`
   --box-size: ${({ width }) => `${width}px`};
   overflow: hidden;
-  background-color: rgb(234, 234, 234);
+  background: ${colors.projacts_color};
 
   width: 100%;
 

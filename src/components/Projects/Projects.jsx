@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import colors from "../colors";
 import Carousel from "../carousel/Carousel";
 import Card from "../carousel/Card";
 import { StyledTitle } from "../Global.styled";
+import styledCarousel from "styled-components";
+
+const StyledCarousel = styledCarousel(Carousel)`
+  background: ${colors.backgroundGradient};
+`;
+
 export default function Projects() {
   return (
     <Section id="projects">
       <Title>Projects</Title>
       <Swipe src="./images/swipe.png"></Swipe>
-      <Carousel width={500}>
+      <StyledCarousel width={500}>
         <Card
           imgSrc="/images/portfolio.png"
           title="Portfolio"
@@ -40,24 +47,33 @@ export default function Projects() {
           text="Predicting whether the stock price will increase or decrease by using different machine learning algorithms. The study has achieved a high accuracy rate of 76%. The code is written in Python."
           link="https://github.com/netanel094/stock-trend-price-prediction"
         />
-      </Carousel>
+      </StyledCarousel>
     </Section>
   );
 }
 
 const Title = styled(StyledTitle)`
-  color: #2f2f2f;
+  font-size: 2.5rem;
   font-weight: bold;
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 1);
+  background: ${colors.mainTitleGradient};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 36px;
 `;
 
 const Section = styled.section`
-  background-color: rgb(234, 234, 234);
-  padding-bottom: 60px;
+  background: ${colors.projacts_color};
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
+
 const Swipe = styled.img`
   width: 40px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   display: flex;
-  padding-bottom: 30px;
 `;
+
+// בשימוש:
+// <StyledCarousel width={500}> ... </StyledCarousel>

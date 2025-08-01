@@ -1,15 +1,182 @@
 #workExperience {
-  background-color: rgb(106, 178, 184);
-  padding: 50px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 80px 0;
+  position: relative;
+}
+
+#workExperience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cbd5e1' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+#workExperience > * {
+  position: relative;
+  z-index: 2;
+}
+
+.workExperience-Title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 4rem !important;
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: none !important;
 }
 
 .workexperience-container {
-  padding-top: 60px;
-  display: flex;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
+/* Modern Timeline Styling */
+.MuiTimeline-root {
+  padding: 0 !important;
+}
+
+.MuiTimelineItem-root {
+  margin-bottom: 3rem !important;
+}
+
+.MuiTimelineOppositeContent-root {
+  padding: 0 2rem !important;
+  flex: 0.2 !important;
+}
+
+.MuiTimelineContent-root {
+  padding: 0 2rem !important;
+  flex: 0.8 !important;
+}
+
+.MuiTimelineDot-root {
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  width: 16px !important;
+  height: 16px !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+.MuiTimelineConnector-root {
+  background: linear-gradient(180deg, #2563eb, #06b6d4) !important;
+  width: 3px !important;
+}
+
+/* Modern Paper Styling */
 .customPaperRoot {
-  min-width: 230px;
-  max-width: 100vh;
+  background: white !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 1 !important;
+  animation: none !important;
+  min-width: 300px !important;
+  max-width: 600px !important;
+}
+
+.customPaperRoot:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  background: linear-gradient(135deg, #f8fafc, #ffffff) !important;
+}
+
+.customPaperRoot h1 {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  background: linear-gradient(135deg, #5c6b8e, #06b6d4) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.customPaperRoot p {
+  color: #64748b !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+/* Date styling */
+.MuiTimelineOppositeContent-root .MuiTypography-body2 {
+  font-weight: 600 !important;
+  color: #2563eb !important;
+  font-size: 1.1rem !important;
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #workExperience {
+    padding: 60px 0;
+  }
+  
+  .workExperience-Title {
+    font-size: 2.5rem !important;
+  }
+  
+  .workexperience-container {
+    padding: 0 1rem;
+  }
+  
+  .MuiTimelineOppositeContent-root {
+    padding: 0 1rem !important;
+  }
+  
+  .MuiTimelineContent-root {
+    padding: 0 1rem !important;
+  }
+  
+  .customPaperRoot {
+    padding: 1.5rem !important;
+    min-width: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .workExperience-Title {
+    font-size: 2rem !important;
+  }
+  
+  .customPaperRoot {
+    padding: 1rem !important;
+    min-width: 200px !important;
+  }
+  
+  .customPaperRoot h1 {
+    font-size: 1.25rem !important;
+  }
+  
+  .customPaperRoot p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Modern animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
